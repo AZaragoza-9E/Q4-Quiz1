@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> QUIZ 1: BMI scale calculator ♡ </title>
+
+	<!-- SETUP BOOTSTRAP: Link to Bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- JS SETUP -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="./main.js"></script>
+
+	<!-- Add style -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+	<div class="container mt-5">
+		<h2> BMI scale calculator ♡ </h2>
+	</div>
+
+	<!-- NAVIGATION TABS --> <!-- ty to my dad for this -->
+	<!-- TABS -->
+	<ul class="nav nav-tabs nav-justified">
+		<li class="nav-item">
+			<a class="nav-link active" data-bs-toggle="tab" href="#homepage">Home ♡</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link" data-bs-toggle="tab" href="#metric">Metric System ♡</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link" data-bs-toggle="tab" href="#imperial">Imperial System ♡</a>
+		</li>
+	</ul>
+
+	<!-- TAB CONTENT [with info on the formula and the chart] -->
+	<div class="tab-content">
+
+		<div class="tab-pane container active mt-3 mb-3" id="homepage">
+			<div class="row">
+				<div class="column">
+					<h3> <a href="https://www.vertex42.com/Calculators/bmi-calculator.html">How to Calculate:</a> </h3>
+						<img src="https://www.registerednursern.com/wp-content/uploads/2023/03/bmi-formula-calculation.png">
+				</div>
+			
+				<div class="column">
+					<h3><a href="https://www.emeraldlaser.com/how-to-calculate-bmi/"> BMI Chart ♡</a></h3>
+						<img src="https://t3.ftcdn.net/jpg/02/33/24/58/360_F_233245868_j82YuiqdCQLWrDBvc3wO08nQ06bUFS2p.jpg">
+				</div>
+			</div>
+		</div>
+
+		<!-- METRIC SYSTEM -->
+		<div class="tab-pane container fade mt-5 mb-3" id="metric">
+			<details ontoggle>
+				<summary>
+					INSTRUCTIONS ♡
+				</summary>
+
+				<h6>
+					Put your height (meters) and your weight (kg) in the box. Check the home tab on how to calculate for your BMI in case you forgot. ♡
+				</h6> <br>
+			</details>
+
+			<form>
+				<br>
+				<!-- NAME INPUT --> <!-- put it for fun -->
+				<label class="col-sm-2">Your Name ♡:</label>
+
+				<input type="text" onkeydown="myFunction()" id="fname">
+				<p id="Name_entry"> Hi, </p>
+
+				<!-- FUNCTION -->
+				<script type="text/javascript"> 
+					function greet(name) {
+						var name=document.getElementById('fname').value;
+						document.getElementById('Name_entry').innerHTML = "Hi,  " + name + '!';
+					}
+				</script>
+
+				<!-- HEIGHT AND WEIGHT -->
+				<br>
+				<label class="col-sm-2">Height ♡:</label>
+					<input type="number" class="col-sm-5" id="heightm" placeholder="height (m)"> <br>
+					<br>
+
+				<label class="col-sm-2">Weight ♡:</label>
+				<input type="number" class="col-sm-5" id="weightkg" placeholder="weight (kg)"> <br>
+				<br>
+
+				<button type="button" class="mt-3 mb-3 btn btn-success" onclick="greet(fname);"> GREET ♡ 
+				</button>
+
+				<button type="button" class="mt-3 mb-3 btn btn-success" onclick="metric()">CALCULATE ♡</button>
+				
+				<button type="button" id="reload" class="mt-3 mb-3 btn btn-success" onclick="window.location.reload();" onmouseover="changeTextColor()" onmouseout="resetTextColor()"> RELOAD ♡ 
+				</button>
+			</form>
+		</div>
+
+		<!-- IMPERIAL -->
+		<div class="tab-pane container fade mt-5 mb-3" id="imperial">
+			<details ontoggle>
+				<summary>
+					INSTRUCTIONS ♡
+				</summary>
+
+				<h6>
+					Put your height (meters) and your weight (kg) in the box. Check the home tab on how to calculate for your BMI in case you forgot. ♡
+				</h6>
+			</details>
+
+			<form>
+				<br>
+				<!-- NAME INPUT --> <!-- put it for fun -->
+				<label class="col-sm-2">Your Name ♡:</label>
+
+				<input type="text" onkeydown="myFunction()" id="2fname">
+				<p id="Name_entry2"> Hi, </p>
+
+				<!-- FUNCTION -->
+				<script type="text/javascript"> 
+					function greet(name) {
+						var name=document.getElementById('2fname').value;
+						document.getElementById('Name_entry2').innerHTML = "Hi,  " + name + '!';
+					}
+				</script>
+
+				<!-- HEIGHT AND WEIGHT -->
+				<br>
+				<label class="col-sm-2">Height ♡:</label>
+					<input type="number" class="col-sm-5" id="inches" placeholder="height (in)"> <br>
+					<br>
+
+				<label class="col-sm-2">Weight ♡: </label>
+					<input type="number" class="col-sm-5" id="pounds" placeholder="weight (pounds)"> <br>
+					<br>
+
+					<button type="button" class="mt-3 mb-3 btn btn-success" onclick="greet(fname);"> GREET ♡ </button>
+
+					<button type="button" class="mt-3 mb-3 btn btn-success" onclick="imperial()">CALCULATE ♡</button>
+				
+					<button type="button" id="reload" class="mt-3 mb-3 btn btn-success" onclick="window.location.reload();" onmouseover="changeTextColor()" onmouseout="resetTextColor()"> RELOAD ♡ 
+					</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<div class="footer">
+		<h5>
+			<a href="https://github.com/AZaragoza-9E/Q4-Quiz1" target="_blank"> ♡ Annika Colleen C. Zaragoza | 9-E ♡ </a>
+		</h5>
+	</div>
+</body>
+</html>
